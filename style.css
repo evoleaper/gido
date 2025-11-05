@@ -1,0 +1,21 @@
+/* --- Replace your old #talk-bubble style with this entire block --- */
+#talk-bubble {
+    position: absolute;
+    display: none;
+    z-index: 999;
+    pointer-events: none;
+    
+    /* ★★★ ADJUST THE BUBBLE SIZE HERE ★★★ */
+    width: 320px; /* Bubble's horizontal width */
+    padding: 20px; /* Inner spacing */
+    /* ★★★★★★★★★★★★★★★★★★★★★★★ */
+
+    background-color: white;
+    color: black; 
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
+    .clickable-image:hover {
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 1));
+}
+}

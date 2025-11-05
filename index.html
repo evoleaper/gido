@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-in-One Hover Effects</title>
+    <style>
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif; 
+            color: white; 
+        }
+
+        body {
+            background-image: url('https://raw.githubusercontent.com/evoleaper/gido/main/gido1.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .clickable-image {
+            cursor: pointer;
+            transition: filter 0.3s ease; 
+        }
+        
+        .clickable-image:hover {
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+        }
+        
+    
+        #talk-bubble {
+            position: absolute;
+            display: none;
+            z-index: 999;
+            pointer-events: none;
+            width: fit-content; 
+            background-color: white;
+            color: black;
+            border-radius: 15px;
+            padding: 10px;
+            box-shadow: 0 4px 12px rgba(23, 63, 78, 0.2);
+        }
+
+        #bubble-img {
+            width: 280px; 
+            height: auto;
+            border-radius: 6px;
+            display: block; 
+        }
+
+        #bubble-text {
+            margin: 8px 0 0 0;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* 기존 이미지 스타일 */
+        .new-image { position: absolute; top: 13%; left: 53%; width: 56px; transform: translate(-50%, -50%); height: auto; z-index: 11; }
+        .image-two { position: absolute; top: 85%; left: 88%; width: 90px; transform: translate(-50%, -50%); height: auto; z-index: 12; }
+        .image-three { position: absolute; top: 30%; left: 68%; width: 100px; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-four { position: absolute; top: 40%; left: 62%; width: 65px; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-five { position: absolute; top: 20%; left: 55%; width: 67px; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-six { position: absolute; top: 26%; left: 58%; width: 63px; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-seven { position: absolute; top: 29%; left: 53%; width: 63px; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-eight { position: absolute; top: 45%; left: 58%; width: 78px; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-nine { position: absolute; top: 40%; left: 51%; width: 75px; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-ten { position: absolute; top: 53%; left: 65%; width: 6%; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-eleven { position: absolute; top: 23%; left: 63%; width: 3.5%; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-twelve{ position: absolute; top: 70%; left: 52%; width: 3.2%; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-thirteen{ position: absolute; top: 51%; left: 54%; width: 3.7%; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-fourteen{ position: absolute; top: 10%; left: 63%; width: 4.1%; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-fifteen{ position: absolute; top: 72%; left: 74%; width: 5%; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-sixteen{ position: absolute; top: 74%; left: 64%; width: 3.5%; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-seventeen{ position: absolute; top: 64%; left: 56%; width: 3.8%; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-eighteen{ position: absolute; top: 50%; left: 72%; width: 3.1%; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-nineteen{ position: absolute; top: 50%; left: 72%; width: 3.1%; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-twenty{ position: absolute; top: 55%; left: 76%; width: 5%; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-twentyone{ position: absolute; top: 59%; left: 70%; width: 5%; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-twentytwo{ position: absolute; top: 80%; left: 55%; width: 3.5%; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-twentythree{ position: absolute; top: 10%; left: 69%; width: 3.5%; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-twentyfour{ position: absolute; top: 19%; left: 72%; width: 3.5%; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-twentyfive{ position: absolute; top: 40%; left: 75%; width: 4%; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        .image-twentysix{ position: absolute; top: 42%; left: 67%; width: 4%; transform: translate(-50%, -50%); height: auto; z-index: 13; }
+        
+        /* --- 27번째 이미지 스타일 (여기서 위치/크기 조절) --- */
+        .image-twentyseven { 
+            position: absolute; 
+            top: 20%;   /* 상단으로부터 50% 위치 */
+            left: 40%;  /* 왼쪽으로부터 20% 위치 */
+            width: 100px; /* 가로 크기 80px */
+            transform: translate(-50%, -50%);
+            height: auto; 
+            z-index: 14;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/gidocat.png" alt="Gido Cat" class="new-image clickable-image"
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/goyang-8.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/labong.png" alt="Labong" class="image-two clickable-image"
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/jeju.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/water.png" alt="Water" class="image-three clickable-image"
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/jaechun.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/otter.png" alt="Otter" class="image-four clickable-image"
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/choong.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/hatchi.png" alt="Hatchi" class="image-five clickable-image"
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/seoul.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/good.png" alt="Good" class="image-six clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/yongin.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/handsup.png" alt="Hands Up" class="image-seven clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/bucheon1.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/dream.png" alt="Dream" class="image-eight clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/daejeon.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/apple.png" alt="Apple" class="image-nine clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/yeadol.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/gimbab.png" alt="Gimbab" class="image-ten clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/gimcheon.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/bbang.png" alt="Bbang" class="image-eleven clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/bread.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/bird.png" alt="Bird" class="image-twelve clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/gwang.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/strawberry.png" alt="Strawberry" class="image-thirteen clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/gunsan2.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/bear.png" alt="Bear" class="image-fourteen clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/yangu.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/unnie.png" alt="Unnie" class="image-fifteen clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/busan.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/seaotter.png" alt="Sea Otter" class="image-sixteen clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/pearl.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/robot.png" alt="Robot" class="image-seventeen clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/jeonlab.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/onion.png" alt="Onion" class="image-eighteen clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/sung.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/onion.png" alt="Onion 2" class="image-nineteen clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/sung.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/top.png" alt="Top" class="image-twenty clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/ju.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/hedgehog.png" alt="Hedgehog" class="image-twentyone clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/daegu.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/matcha.png" alt="Matcha" class="image-twentytwo clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/bosung.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/mushroom.png" alt="Mushroom" class="image-twentythree clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/yangyang.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/coffee.png" alt="Coffee" class="image-twentyfour clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/gangneung.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/crab.png" alt="Crab" class="image-twentyfive clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/young.png" data-bubble-text=" ">
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/gam.png" alt="Gam" class="image-twentysix clickable-image" 
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/sang.png" data-bubble-text=" ">
+
+    <img src="https://raw.githubusercontent.com/evoleaper/gido/main/dokdo.png" alt="Dokdo Image" class="image-twentyseven clickable-image"
+         data-bubble-image="https://raw.githubusercontent.com/evoleaper/gido/main/dokdo.png" 
+         data-bubble-text="Dokdo">
+    <div id="talk-bubble">
+        <img src="" id="bubble-img" alt="Bubble Content">
+        <p id="bubble-text"></p>
+    </div>
+
+    <script>
+        const clickableImages = document.querySelectorAll('.clickable-image');
+        const talkBubble = document.getElementById('talk-bubble');
+        const bubbleImg = document.getElementById('bubble-img');
+        const bubbleText = document.getElementById('bubble-text');
+
+        clickableImages.forEach(image => {
+            image.addEventListener('mouseenter', (event) => {
+                const rect = event.target.getBoundingClientRect();
+                
+                const newImgSrc = event.target.dataset.bubbleImage;
+                const newText = event.target.dataset.bubbleText;
+
+                if (newImgSrc && newText) {
+                    bubbleImg.src = newImgSrc;
+                    bubbleText.textContent = newText;
+                    
+                    const topOffset = -30;
+                    const leftOffset = 10;
+
+                    talkBubble.style.top = `${rect.top + topOffset}px`;
+                    talkBubble.style.left = `${rect.right + leftOffset}px`;
+                    
+                    talkBubble.style.display = 'block';
+                }
+            });
+
+            image.addEventListener('mouseleave', () => {
+                talkBubble.style.display = 'none';
+                bubbleImg.src = "";
+                bubbleText.textContent = "";
+            });
+        });
+    </script>
+</body>
+</html>
